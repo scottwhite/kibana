@@ -343,8 +343,8 @@ class HeaderUI extends Component<Props, State> {
               url={basePath.prepend(`/${navLink.icon}`)}
             />
           ) : (
-              undefined
-            ),
+            undefined
+          ),
         'data-test-subj': 'navDrawerAppsMenuLink',
       }));
 
