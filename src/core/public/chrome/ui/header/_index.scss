@@ -45,3 +45,95 @@
     }
   }
 }
+
+/* CHANGE! */
+.euiHeaderLogo {
+  width: 200px;
+  padding: 0px;
+  background-color: #ffffff;
+}
+
+.euiIcon--large {
+  width: 200px;
+  height: 40px;
+  top: 0px;
+}
+
+.euiHeaderBreadcrumbs {
+  background-color: #1b5194;
+  color: #ffffff;
+  margin:0;
+  padding-left: 10px;
+}
+
+$sideNavColor: #407cb3;
+
+header > .euiNavDrawer {
+  background-color: $sideNavColor;
+  color: #ffffff;
+}
+
+nav .euiNavDrawer__expandButton {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+nav {
+  & .euiIcon--app {
+    fill: #ebf1f7;
+    & .euiIcon__fillSecondary {
+      fill: #264a6b;
+    }
+  }
+
+  & .euiListGroupItem {
+    background-color: $sideNavColor;
+    &.euiListGroupItem-isActive,
+    &.euiListGroupItem-isClickable:hover {
+      background-color: tintOrShade($sideNavColor, 30%, 30%);
+    }
+
+    &.euiListGroupItem-isClickable .euiListGroupItem__button:focus {
+      background-color: tintOrShade($sideNavColor, 30%, 30%);
+      text-decoration: underline;
+    }
+  }
+  .euiListGroupItem-isActive {
+    background-color: transparent;
+  }
+
+  & .euiListGroup .euiNavDrawer__expandButton {
+    background-color: $sideNavColor;
+  }
+  & .euiButtonIcon--text {
+    color: #ffffff;
+  }
+  // & .euiListGroupItem__extraAction {
+  //   background-color:#ffffff;
+  // }
+
+  & .euiListGroupItem__extraAction {
+    opacity: 1;
+    margin-right: $euiSizeS;
+    transition: opacity $euiAnimSpeedFast;
+  
+    .euiListGroupItem:not(.euiListGroupItem-isDisabled):focus &,
+    .euiListGroupItem:not(.euiListGroupItem-isDisabled):hover &,
+    &.euiListGroupItem__extraAction-alwaysShow,
+    &:focus {
+      opacity: 1;
+    }
+  }
+    & .euiLink.euiLink--subdued {
+      color:#ebf1f7;
+
+      &:hover {
+        color: darken(#ebf1f7, 10%);
+      }
+
+      &:focus {
+        outline: solid 3px transparentize(#ebf1f7, .9);
+        background-color: transparentize(#ebf1f7, .9);
+      }
+    }
+}

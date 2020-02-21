@@ -225,6 +225,11 @@ class HeaderUI extends Component<Props, State> {
         recentlyAccessed,
         [navControlsLeft, navControlsRight, currentAppId],
       ]) => {
+        // CHANGE!: Changed to only show the 3
+        navLinks = navLinks.filter(nav => {
+          return ['kibana:discover', 'kibana:visualize', 'kibana:dashboard'].indexOf(nav.id) > -1;
+        });
+
         this.setState({
           appTitle,
           isVisible,
@@ -252,7 +257,7 @@ class HeaderUI extends Component<Props, State> {
     return (
       <EuiHeaderLogo
         data-test-subj="logo"
-        iconType="logoKibana"
+        iconType="https://static.wixstatic.com/media/4d20a7_bedd2ff9451245ae8cdbf3fc0c2475bc~mv2.png/v1/fill/w_200,h_40,al_c,q_85,usm_1.20_1.00_0.01/EnclaveData.webp"
         onClick={this.onNavClick}
         href={homeHref}
         aria-label={intl.formatMessage({
@@ -338,8 +343,8 @@ class HeaderUI extends Component<Props, State> {
               url={basePath.prepend(`/${navLink.icon}`)}
             />
           ) : (
-            undefined
-          ),
+              undefined
+            ),
         'data-test-subj': 'navDrawerAppsMenuLink',
       }));
 
@@ -377,14 +382,14 @@ class HeaderUI extends Component<Props, State> {
 
             <EuiHeaderSectionItem border="right">{this.renderLogo()}</EuiHeaderSectionItem>
 
-            <HeaderNavControls side="left" navControls={navControlsLeft} />
+            {/* CHANGE!: uh huh <HeaderNavControls side="left" navControls={navControlsLeft} /> */}
           </EuiHeaderSection>
 
           <HeaderBreadcrumbs appTitle={appTitle} breadcrumbs$={breadcrumbs$} />
 
           <HeaderBadge badge$={badge$} />
 
-          <EuiHeaderSection side="right">
+          {/* CHANGE!: nope <EuiHeaderSection side="right">
             <EuiHeaderSectionItem>
               <HeaderHelpMenu
                 {...{
@@ -397,7 +402,7 @@ class HeaderUI extends Component<Props, State> {
             </EuiHeaderSectionItem>
 
             <HeaderNavControls side="right" navControls={navControlsRight} />
-          </EuiHeaderSection>
+          </EuiHeaderSection> */}
         </EuiHeader>
 
         <EuiNavDrawer

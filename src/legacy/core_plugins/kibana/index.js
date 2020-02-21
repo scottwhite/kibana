@@ -106,25 +106,25 @@ export default function(kibana) {
           subUrlBase: `${kbnBaseUrl}#/dashboard`,
           euiIconType: 'dashboardApp',
         },
-        {
-          id: 'kibana:dev_tools',
-          title: i18n.translate('kbn.devToolsTitle', {
-            defaultMessage: 'Dev Tools',
-          }),
-          order: 9001,
-          url: '/app/kibana#/dev_tools',
-          euiIconType: 'devToolsApp',
-        },
-        {
-          id: 'kibana:management',
-          title: i18n.translate('kbn.managementTitle', {
-            defaultMessage: 'Management',
-          }),
-          order: 9003,
-          url: `${kbnBaseUrl}#/management`,
-          euiIconType: 'managementApp',
-          linkToLastSubUrl: false,
-        },
+        // {
+        //   id: 'kibana:dev_tools',
+        //   title: i18n.translate('kbn.devToolsTitle', {
+        //     defaultMessage: 'Dev Tools',
+        //   }),
+        //   order: 9001,
+        //   url: '/app/kibana#/dev_tools',
+        //   euiIconType: 'devToolsApp',
+        // },
+        // {
+        //   id: 'kibana:management',
+        //   title: i18n.translate('kbn.managementTitle', {
+        //     defaultMessage: 'Management',
+        //   }),
+        //   order: 9003,
+        //   url: `${kbnBaseUrl}#/management`,
+        //   euiIconType: 'managementApp',
+        //   linkToLastSubUrl: false,
+        // },
       ],
 
       savedObjectsManagement: {
