@@ -68,9 +68,8 @@ export const Styles: FunctionComponent<Props> = ({ darkMode }) => {
           }
 
           .kibanaWelcomeLogo {
-            width: 216px;
-            height: 120px;
-            margin: 10px 0 10px 20px;
+            width: 80px;
+            height: 80px;
             background-repeat: no-repeat;
             background-size: contain;
             /* SVG optimized according to http://codepen.io/tigt/post/optimizing-svgs-in-data-uris */
@@ -117,7 +116,7 @@ export const Styles: FunctionComponent<Props> = ({ darkMode }) => {
             margin: 0 auto;
             position: relative;
             border: 2px solid transparent;
-            border-top: 2px solid #017d73;
+            border-top: 2px solid #264a6b;
             border-radius: 100%;
             display: block;
             /*opacity: 0;*/
@@ -126,12 +125,9 @@ export const Styles: FunctionComponent<Props> = ({ darkMode }) => {
 
           .kibanaWelcomeLogoCircle {
             position: absolute;
-            left: 4px;
-            top: 4px;
-            width: 120px;
-            height: 120px;
-            padding: 20px;
-            background-color: #fff;
+            left: 22px;
+            top: 24px;
+            background-color: transparent;
             border-radius: 50%;
             animation: bounceIn .5s ease-in-out;
           }
