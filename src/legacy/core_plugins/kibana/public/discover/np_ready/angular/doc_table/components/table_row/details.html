@@ -37,9 +37,9 @@
         </div>
         <div class="euiFlexItem euiFlexItem--flexGrowZero euiText euiText--small">
           <a
+            ng-click="openApp($event,row)"
             class="euiLink"
             data-test-subj="docTableRowAction"
-            ng-href="#/log/viewpart?id={{uriEncodedId}}"
             i18n-id="kbn.docTable.tableRow.viewInLogChain"
             i18n-default-message="View in Log Chain"
           ></a>
