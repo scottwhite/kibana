@@ -101,17 +101,17 @@ export function createTableRowDirective(
         $compile($detailsTr)($detailsScope);
       };
 
-      $scope.openApp = function($event: any, row: any){
-        $event.stopPropagation()
-        $event.preventDefault()
+      $scope.openApp = function($event: any, row: any) {
+        $event.stopPropagation();
+        $event.preventDefault();
         // todo : get this from env
-        let appurl = 'https://dev.ig.enclavedata.com'
-        if(process.env.NODE_ENV=='development'){
-          appurl = 'http://localhost:3000'
+        let appurl = 'https://dev.ig.enclavedata.com';
+        if (process.env.NODE_ENV === 'development') {
+          appurl = 'http://localhost:3000';
         }
-        let sha = row._source.hash
-        window.open(`${appurl}/logchain/${sha}`,'log chain')
-      }
+        const sha = row._source.hash;
+        window.open(`${appurl}/logchain/${sha}`, 'log chain');
+      };
 
       $scope.$watchMulti(['indexPattern.timeFieldName', 'row.highlight', '[]columns'], () => {
         createSummaryRow($scope.row);
